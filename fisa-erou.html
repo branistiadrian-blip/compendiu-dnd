@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Fișa Eroului</title>
+<link href="https://fonts.googleapis.com/css2?family=Alegreya:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#e8ecf1;--panel:#fff;--ink:#1b2333;--mute:#5d6b82;--line:#cfd7e3;--gold:#9a6b12;--goldbg:#f6e7c2;--red:#b3362d;--ok:#2f7d4f;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#11151d;--panel:#1a202c;--ink:#e6e9f0;--mute:#93a0b8;--line:#2b3446;--gold:#e0b556;--goldbg:#3a2f14;--red:#e0645a;--ok:#5fc08a}}
+:root[data-theme="dark"]{--bg:#11151d;--panel:#1a202c;--ink:#e6e9f0;--mute:#93a0b8;--line:#2b3446;--gold:#e0b556;--goldbg:#3a2f14;--red:#e0645a;--ok:#5fc08a}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.4 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:640px;margin:0 auto;padding:12px 12px 40px}
+input,select,textarea,button{font:inherit;color:inherit}
+input,select,textarea{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:8px 10px;width:100%;min-width:0}
+button{cursor:pointer;background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:8px 12px}
+header{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px;margin-bottom:10px}
+.nm{font:700 24px/1.2 Alegreya,Georgia,serif;border:0;border-bottom:2px solid var(--gold);border-radius:0;padding:4px 0;margin-bottom:8px;background:transparent}
+.row3{display:grid;grid-template-columns:1fr 1fr 84px;gap:8px}
+.lv{display:flex;align-items:center;gap:6px;color:var(--mute);font-size:14px}
+.res{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;display:flex;justify-content:space-between;align-items:center;background:var(--goldbg);border:1px solid var(--gold);border-radius:12px;padding:8px 14px;margin-bottom:10px}
+.res small{display:block;color:var(--mute)}
+.res strong{font:700 34px/1 Alegreya,Georgia,serif;color:var(--gold)}
+nav{display:grid;grid-template-columns:repeat(6,1fr);gap:4px;margin-bottom:8px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px}
+.rl{display:grid;grid-template-columns:1fr 84px;gap:8px}
+.add .g3{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+nav button{padding:10px 2px;font-weight:600;font-size:14px}
+nav button.on,.advr button.on{background:var(--gold);border-color:var(--gold);color:var(--bg)}
+.advr{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:10px}
+.advr button{padding:6px;font-size:14px}
+.tray{display:grid;gap:8px;margin-bottom:10px}
+.stp{display:flex;align-items:center;gap:10px;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:8px 12px}
+.stp span{flex:1;color:var(--mute)}
+.stp b{min-width:36px;text-align:center;font:700 22px Alegreya,Georgia,serif}
+.stp button{width:44px;font-size:20px}
+.dgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.die{padding:18px 0;font:700 20px Alegreya,Georgia,serif;color:var(--gold);border-color:var(--gold)}
+.vit{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:10px}
+.box{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:8px;text-align:center}
+.box label{display:block;font-size:12px;color:var(--mute)}
+.box input{text-align:center;font-weight:700;font-size:18px;padding:4px}
+.box .v{font:700 22px/1.6 Alegreya,Georgia,serif}
+.hp{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:10px;margin-bottom:10px}
+.hp .top{display:flex;gap:8px;align-items:center;margin-bottom:8px}
+.hp .top input{width:64px;text-align:center;font:700 22px Alegreya,Georgia,serif}
+.hp .bar{flex:1;height:10px;background:var(--line);border-radius:6px;overflow:hidden}
+.hp .bar i{display:block;height:100%;background:var(--red)}
+.hp .btns{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.abs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:10px}
+.ab{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:8px;text-align:center}
+.ab b{display:block;font-size:13px;color:var(--mute)}
+.ab .m{width:100%;font:700 28px/1.2 Alegreya,Georgia,serif;border:0;background:transparent;padding:2px}
+.ab input{text-align:center;padding:4px;margin:2px 0 6px}
+.ab .sv{width:100%;font-size:13px;display:flex;justify-content:space-between;padding:6px 8px}
+.ab .sv.p{border-color:var(--gold);background:var(--goldbg)}
+h3{font:700 18px Alegreya,Georgia,serif;margin:14px 0 6px}
+.list{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.sk{display:flex;align-items:center;gap:10px;padding:9px 12px;border-bottom:1px solid var(--line);cursor:pointer}
+.sk:last-child{border-bottom:0}
+.sk span{flex:1}
+.sk i{font-style:normal;color:var(--mute);font-size:12px;margin-left:6px}
+.sk b{min-width:36px;text-align:right}
+.pm{border:0;background:transparent;font-size:20px;padding:0 4px;color:var(--gold)}
+.act{padding:10px 12px;border-bottom:1px solid var(--line)}
+.act:last-child{border-bottom:0}
+.act .t{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
+.act .b{display:flex;gap:8px}
+.act .b button{flex:1;font-weight:600}
+.x{border:0;background:transparent;color:var(--red);font-size:20px;padding:0 6px}
+.add{display:grid;gap:8px;margin-top:10px}
+.add .g{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.go{background:var(--gold);border-color:var(--gold);color:var(--bg);font-weight:700}
+.dc{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+.mute{color:var(--mute);font-size:14px}
+textarea{min-height:50vh}
+</style>
+</head>
+<body>
+<main id="app"></main>
+<script>
+const $=id=>document.getElementById(id);
+const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const AB=['FOR','DEX','CON','INT','ÎNȚ','CAR'];
+const SK=[['Acrobatică',1],['Arcane',3],['Atletism',0],['Furt',1],['Furtivitate',1],['Istorie',3],['Intimidare',5],['Investigare',3],['Medicină',4],['Natură',3],['Percepție',4],['Perspicacitate',4],['Persuasiune',5],['Religie',3],['Supraviețuire',4],['Interpretare',5],['Înșelăciune',5],['Îngrijirea animalelor',4]];
+const CL={
+Barbarian:[12,[0,2],-1,'Berserker,Totem Warrior,Ancestral Guardian,Storm Herald,Zealot,Wild Magic,Beast'],
+Bard:[8,[1,5],5,'Lore,Valor,Glamour,Swords,Whispers,Eloquence,Creation'],
+Cleric:[8,[4,5],4,'Knowledge,Life,Light,Nature,Tempest,Trickery,War,Forge,Grave,Order,Peace,Twilight'],
+Druid:[8,[3,4],4,'Land,Moon,Dreams,Shepherd,Spores,Stars,Wildfire'],
+Fighter:[10,[0,2],-1,'Champion,Battle Master,Eldritch Knight,Arcane Archer,Cavalier,Samurai,Echo Knight,Psi Warrior,Rune Knight'],
+Monk:[8,[0,1],-1,'Open Hand,Shadow,Four Elements,Drunken Master,Kensei,Sun Soul,Mercy,Astral Self'],
+Paladin:[10,[4,5],5,'Devotion,Ancients,Vengeance,Conquest,Redemption,Oathbreaker,Glory,Watchers'],
+Ranger:[10,[0,1],4,'Hunter,Beast Master,Gloom Stalker,Horizon Walker,Monster Slayer,Fey Wanderer,Swarmkeeper,Drake Warden'],
+Rogue:[8,[1,3],-1,'Thief,Assassin,Arcane Trickster,Inquisitive,Mastermind,Scout,Swashbuckler,Phantom,Soulknife'],
+Sorcerer:[6,[2,5],5,'Draconic,Wild Magic,Divine Soul,Shadow,Storm,Aberrant Mind,Clockwork Soul'],
+Warlock:[8,[4,5],5,'Archfey,Fiend,Great Old One,Celestial,Hexblade,Fathomless,Genie,Undead'],
+Wizard:[6,[3,4],3,'Abjuration,Conjuration,Divination,Enchantment,Evocation,Illusion,Necromancy,Transmutation,Bladesinging,War Magic,Chronurgy,Graviturgy,Scribes'],
+Artificer:[8,[2,3],3,'Alchemist,Armorer,Artillerist,Battle Smith']};
+const RC=[['Human',30,[1,1,1,1,1,1]],['Variant Human',30,[0,0,0,0,0,0]],['Hill Dwarf',25,[0,0,2,0,1,0]],['Mountain Dwarf',25,[2,0,2,0,0,0]],
+['High Elf',30,[0,2,0,1,0,0]],['Wood Elf',35,[0,2,0,0,1,0]],['Drow',30,[0,2,0,0,0,1]],['Lightfoot Halfling',25,[0,2,0,0,0,1]],['Stout Halfling',25,[0,2,1,0,0,0]],
+['Forest Gnome',25,[0,1,0,2,0,0]],['Rock Gnome',25,[0,0,1,2,0,0]],['Half-Elf',30,[0,0,0,0,0,2]],['Half-Orc',30,[2,0,1,0,0,0]],['Tiefling',30,[0,0,0,1,0,2]],
+['Dragonborn',30,[2,0,0,0,0,1]],['Aasimar',30,[0,0,0,0,0,2]],['Air Genasi',30,[0,1,2,0,0,0]],['Earth Genasi',30,[1,0,2,0,0,0]],['Fire Genasi',30,[0,0,2,1,0,0]],
+['Water Genasi',30,[0,0,2,0,1,0]],['Goliath',30,[2,0,1,0,0,0]],['Tabaxi',30,[0,2,0,0,0,1]],['Firbolg',30,[1,0,0,0,2,0]],['Kenku',30,[0,2,0,0,1,0]],
+['Lizardfolk',30,[0,0,2,0,1,0]],['Tortle',30,[2,0,0,0,1,0]],['Triton',30,[1,0,1,0,0,1]],['Bugbear',30,[2,1,0,0,0,0]],['Goblin',30,[0,2,1,0,0,0]],
+['Hobgoblin',30,[0,0,2,1,0,0]],['Kobold',30,[-2,2,0,0,0,0]],['Orc',30,[2,0,1,-2,0,0]],['Yuan-ti Pureblood',30,[0,0,0,1,0,2]],['Changeling',30,[0,1,0,0,0,2]],
+['Shifter',30,[0,1,0,0,0,0]],['Warforged',30,[0,0,1,0,0,0]],['Githyanki',30,[2,0,0,1,0,0]],['Githzerai',30,[0,0,0,1,2,0]],['Aarakocra',25,[0,2,0,0,1,0]],
+['Centaur',40,[2,0,0,0,1,0]],['Minotaur',30,[2,0,1,0,0,0]],['Satyr',35,[0,1,0,0,0,2]],['Loxodon',30,[0,0,2,0,1,0]],['Vedalken',30,[0,0,0,2,1,0]],
+['Leonin',35,[0,0,1,0,0,0]],['Fairy',30,[0,0,0,0,0,0]],['Harengon',30,[0,0,0,0,0,0]]];
+function def(){return{hb:{cls:[],races:[],subs:{}},sub:'',rb:[0,0,0,0,0,0],name:'',cls:'',race:'',lvl:1,ab:[10,10,10,10,10,10],sv:[0,0,0,0,0,0],sk:{},ac:10,spd:30,hp:10,mhp:10,cast:3,acts:[],spells:[],notes:''}}
+function load(){try{const j=localStorage.getItem('fisa');if(j)return Object.assign(def(),JSON.parse(j))}catch(e){}return def()}
+function save(){try{localStorage.setItem('fisa',JSON.stringify(S))}catch(e){}}
+let S=load(),tab='stats',out=null;
+const mod=v=>Math.floor((v-10)/2),pb=()=>Math.ceil(S.lvl/4)+1,sg=n=>(n>=0?'+':'')+n;
+const m=i=>mod(S.ab[i]);
+
+function set(k,v){S[k]=v;save();render()}
+function setAb(i,v){S.ab[i]=Math.min(30,Math.max(1,+v||10));save();render()}
+function togSv(i){S.sv[i]=S.sv[i]?0:1;save();render()}
+function cyc(n){S.sk[n]=((S.sk[n]||0)+1)%3;save();render()}
+function hp(d){S.hp=Math.max(0,Math.min(S.mhp,S.hp+d));save();render()}
+function go(t){tab=t;render()}
+
+function dice(expr){
+  const x=String(expr).replace(/\s/g,'').match(/^(\d*)d(\d+)([+-]\d+)?$/i);
+  if(!x)return null;
+  const n=+x[1]||1,f=+x[2],b=+(x[3]||0),r=[];
+  for(let i=0;i<n;i++)r.push(1+Math.floor(Math.random()*f));
+  return{t:r.reduce((a,c)=>a+c,0)+b,d:r.join('+')+(b?sg(b):'')};
+}
+let adv=0,qty=1,mdf=0,hist=[];
+const rnd=f=>1+Math.floor(Math.random()*f);
+function show(o){out=o;hist.unshift(o);hist=hist.slice(0,12);render()}
+function d20(bonus,label){
+  const a=rnd(20),b=rnd(20);
+  const r=adv>0?Math.max(a,b):adv<0?Math.min(a,b):a;
+  const tag=adv>0?' avantaj ('+a+', '+b+')':adv<0?' dezavantaj ('+a+', '+b+')':'';
+  show({label,t:r+bonus,d:'d20('+r+')'+sg(bonus)+tag,c:r==20?' – 20 natural!':r==1?' – 1 natural':''});
+}
+function rollN(f){
+  if(f==20&&qty==1)return d20(mdf,'d20');
+  const r=[];for(let i=0;i<qty;i++)r.push(rnd(f));
+  show({label:qty+'d'+f+(mdf?sg(mdf):''),t:r.reduce((x,y)=>x+y,0)+mdf,d:r.join(' + ')+(mdf?' '+sg(mdf):''),c:''});
+}
+function setAdv(v){adv=v;render()}
+function step(k,d){if(k=='q')qty=Math.min(20,Math.max(1,qty+d));else mdf=Math.min(30,Math.max(-30,mdf+d));render()}
+function atk(i){d20(+S.acts[i].hit||0,S.acts[i].n+' – atac')}
+function dmg(i){
+  const r=dice(S.acts[i].dmg);
+  show(r?{label:S.acts[i].n+' – daune',t:r.t,d:r.d,c:''}:{label:'Format zar invalid',t:'?',d:'Exemplu: 1d8+3',c:''});
+}
+function addAct(){
+  const n=$('an').value.trim();if(!n)return;
+  S.acts.push({n,hit:+$('ah').value||0,dmg:$('ad').value.trim()});save();render();
+}
+function addSp(){
+  const n=$('sn').value.trim();if(!n)return;
+  S.spells.push({n,lv:+$('sl').value,note:$('so').value.trim()});save();render();
+}
+function del(k,i){S[k].splice(i,1);save();render()}
+
+function clsData(n){
+  const b=S.hb.cls.find(c=>c.n==n);
+  if(b)return{die:b.die,sv:b.sv,cast:b.cast,subs:String(b.subs||'').split(',').map(s=>s.trim()).filter(Boolean)};
+  const c=CL[n];return c&&{die:c[0],sv:c[1],cast:c[2],subs:c[3].split(',')};
+}
+function raceData(n){
+  const b=S.hb.races.find(r=>r.n==n);
+  if(b)return{spd:b.spd,b:b.b};
+  const r=RC.find(x=>x[0]==n);return r&&{spd:r[1],b:r[2]};
+}
+const clsList=()=>[...new Set(Object.keys(CL).concat(S.hb.cls.map(c=>c.n)))];
+const raceList=()=>[...new Set(RC.map(r=>r[0]).concat(S.hb.races.map(r=>r.n)))];
+function subsOf(n){const c=clsData(n);return c?c.subs.concat(S.hb.subs[n]||[]):[]}
+function opts(list,cur,ph){const l=list.slice();if(cur&&!l.includes(cur))l.push(cur);return '<option value="">'+ph+'</option>'+l.map(x=>`<option ${x==cur?'selected':''}>${esc(x)}</option>`).join('')}
+function pickCls(n){
+  S.cls=n;S.sub='';const d=clsData(n);
+  if(d){S.sv=[0,0,0,0,0,0];d.sv.forEach(i=>S.sv[i]=1);if(d.cast>=0)S.cast=d.cast}
+  save();render();
+}
+function pickRace(n){S.race=n;const r=raceData(n);if(r)S.spd=r.spd;save();render()}
+function applyRace(){
+  const r=raceData(S.race);if(!r)return;
+  S.ab=S.ab.map((v,i)=>Math.min(30,Math.max(1,v-S.rb[i]+r.b[i])));S.rb=r.b.slice();save();render();
+}
+function hdrInfo(){
+  const c=clsData(S.cls),r=raceData(S.race);let t='';
+  if(c)t+=`Zar de viață d${c.die} · Salvări: ${c.sv.map(i=>AB[i]).join(', ')}`;
+  if(r&&r.b.some(x=>x)){
+    const s=r.b.map((x,i)=>x?AB[i]+sg(x):'').filter(Boolean).join(' ');
+    t+=`<div><button style="margin-top:6px" onclick="applyRace()">Aplică bonusuri rasă (${s})</button></div>`;
+  }
+  return t;
+}
+function addHC(){
+  const n=$('hcn').value.trim();if(!n)return;
+  S.hb.cls=S.hb.cls.filter(x=>x.n!=n);
+  S.hb.cls.push({n,die:+$('hcd').value,cast:+$('hcc').value,sv:[+$('hs1').value,+$('hs2').value],subs:$('hcs').value});
+  save();render();
+}
+function addHS(){
+  const c=$('hsc').value,n=$('hsn').value.trim();if(!c||!n)return;
+  (S.hb.subs[c]=S.hb.subs[c]||[]).push(n);save();render();
+}
+function addHR(){
+  const n=$('hrn').value.trim();if(!n)return;
+  S.hb.races=S.hb.races.filter(x=>x.n!=n);
+  S.hb.races.push({n,spd:+$('hrs').value||30,b:[0,1,2,3,4,5].map(i=>+$('hb'+i).value||0)});
+  save();render();
+}
+function delHB(k,i){S.hb[k].splice(i,1);save();render()}
+function delHS(c,i){S.hb.subs[c].splice(i,1);save();render()}
+function render(){
+  let h='';
+  if(out)h+=`<div class="res"><div><b>${esc(out.label)}</b><small>${esc(out.d+out.c)}</small></div><strong>${esc(out.t)}</strong></div>`;
+  h+=`<header><input class="nm" value="${esc(S.name)}" placeholder="Numele eroului" onchange="set('name',this.value)">
+  <div class="row2"><select onchange="pickCls(this.value)">${opts(clsList(),S.cls,'Clasă')}</select>
+  <select onchange="set('sub',this.value)">${opts(subsOf(S.cls),S.sub,'Subclasă')}</select></div>
+  <div class="rl"><select onchange="pickRace(this.value)">${opts(raceList(),S.race,'Rasă')}</select>
+  <label class="lv">Nv <input type="number" min="1" max="20" value="${S.lvl}" onchange="set('lvl',Math.min(20,Math.max(1,+this.value||1)))"></label></div><div class="mute" style="margin-top:8px">${hdrInfo()}</div></header>`;
+  const T=[['stats','Stats'],['act','Atac'],['spell','Vrăji'],['dice','Zaruri'],['note','Note'],['hb','HB']];
+  h+='<nav>'+T.map(t=>`<button class="${tab==t[0]?'on':''}" onclick="go('${t[0]}')">${t[1]}</button>`).join('')+'</nav>';
+  h+='<div class="advr">'+[[0,'Normal'],[1,'Avantaj'],[-1,'Dezavantaj']].map(a=>`<button class="${adv==a[0]?'on':''}" onclick="setAdv(${a[0]})">${a[1]}</button>`).join('')+'</div>';
+
+  if(tab=='dice'){
+    h+=`<div class="tray"><div class="stp"><span>Zaruri</span><button onclick="step('q',-1)">−</button><b>${qty}</b><button onclick="step('q',1)">+</button></div>
+    <div class="stp"><span>Modificator</span><button onclick="step('m',-1)">−</button><b>${sg(mdf)}</b><button onclick="step('m',1)">+</button></div></div>
+    <div class="dgrid">${[4,6,8,10,12,20,100].map(f=>`<button class="die" onclick="rollN(${f})">d${f}</button>`).join('')}</div>
+    <p class="mute">Avantajul și dezavantajul se aplică doar la d20 (un singur zar).</p>
+    <h3>Istoric</h3><div class="list">${hist.length?hist.map(x=>`<div class="sk" style="cursor:default"><span>${esc(x.label)}<i>${esc(x.d+x.c)}</i></span><b>${esc(x.t)}</b></div>`).join(''):'<div class="act mute">Nicio aruncare încă.</div>'}</div>`;
+  }
+
+  if(tab=='stats'){
+    h+=`<div class="vit">
+    <div class="box"><label>CA</label><input type="number" value="${S.ac}" onchange="set('ac',+this.value||0)"></div>
+    <div class="box"><label>Inițiativă</label><div class="v" style="cursor:pointer" onclick="d20(${m(1)},'Inițiativă')">${sg(m(1))}</div></div>
+    <div class="box"><label>Viteză</label><input type="number" value="${S.spd}" onchange="set('spd',+this.value||0)"></div>
+    <div class="box"><label>Măiestrie</label><div class="v">${sg(pb())}</div></div></div>`;
+    h+=`<div class="hp"><div class="top"><input type="number" value="${S.hp}" onchange="S.hp=Math.max(0,+this.value||0);save();render()"><span>/</span>
+    <input type="number" value="${S.mhp}" onchange="set('mhp',Math.max(1,+this.value||1))">
+    <div class="bar"><i style="width:${Math.min(100,Math.round(S.hp/S.mhp*100))}%"></i></div></div>
+    <div class="btns"><button onclick="hp(-5)">−5</button><button onclick="hp(-1)">−1</button><button onclick="hp(1)">+1</button><button onclick="hp(5)">+5</button></div>
+    <button style="width:100%;margin-top:6px" onclick="set('hp',S.mhp)">Odihnă lungă (HP complet)</button></div>`;
+    h+='<div class="abs">'+AB.map((a,i)=>{
+      const sv=m(i)+(S.sv[i]?pb():0);
+      return `<div class="ab"><b>${a}</b><button class="m" onclick="d20(${m(i)},'${a}')">${sg(m(i))}</button>
+      <input type="number" value="${S.ab[i]}" onchange="setAb(${i},this.value)">
+      <button class="sv ${S.sv[i]?'p':''}" onclick="d20(${sv},'Salvare ${a}')" oncontextmenu="togSv(${i});return false"><span onclick="event.stopPropagation();togSv(${i})">${S.sv[i]?'●':'○'}</span><span>Salv. ${sg(sv)}</span></button></div>`;
+    }).join('')+'</div>';
+    h+='<p class="mute">Atinge modificatorul pentru a arunca un zar. ○ activează măiestria la salvare.</p><h3>Abilități</h3><div class="list">'+SK.map(s=>{
+      const p=S.sk[s[0]]||0,b=m(s[1])+pb()*p;
+      return `<div class="sk" onclick="d20(${b},'${s[0]}')"><button class="pm" onclick="event.stopPropagation();cyc('${s[0]}')">${['○','●','◆'][p]}</button><span>${s[0]}<i>${AB[s[1]]}</i></span><b>${sg(b)}</b></div>`;
+    }).join('')+'</div><p class="mute">○ fără măiestrie, ● măiestrie, ◆ expertiză.</p>';
+  }
+
+  if(tab=='act'){
+    h+='<div class="list">'+(S.acts.length?S.acts.map((a,i)=>`<div class="act"><div class="t"><b>${esc(a.n)}</b><button class="x" onclick="del('acts',${i})">×</button></div>
+    <div class="b"><button onclick="atk(${i})">Atac ${sg(+a.hit||0)}</button><button onclick="dmg(${i})">Daune ${esc(a.dmg||'–')}</button></div></div>`).join(''):'<div class="act mute">Nicio acțiune încă. Adaugă prima mai jos.</div>')+'</div>';
+    h+=`<div class="add"><input id="an" placeholder="Nume (ex: Sabie lungă)"><div class="g"><input id="ah" type="number" placeholder="Bonus atac (ex: 5)"><input id="ad" placeholder="Daune (ex: 1d8+3)"></div><button class="go" onclick="addAct()">Adaugă acțiune</button></div>`;
+  }
+
+  if(tab=='spell'){
+    const ca=m(S.cast);
+    h+=`<div class="dc"><div class="box"><label>Abilitate</label><select onchange="set('cast',+this.value)">${AB.map((a,i)=>`<option value="${i}" ${S.cast==i?'selected':''}>${a}</option>`).join('')}</select></div>
+    <div class="box"><label>CD vrajă</label><div class="v">${8+pb()+ca}</div></div>
+    <div class="box"><label>Atac vrajă</label><div class="v" style="cursor:pointer" onclick="d20(${pb()+ca},'Atac vrajă')">${sg(pb()+ca)}</div></div></div>`;
+    for(let l=0;l<=9;l++){
+      const L=S.spells.map((s,i)=>[s,i]).filter(x=>x[0].lv==l);
+      if(!L.length)continue;
+      h+=`<h3>${l?'Nivel '+l:'Trucuri'}</h3><div class="list">`+L.map(x=>`<div class="act"><div class="t"><div><b>${esc(x[0].n)}</b>${x[0].note?`<div class="mute">${esc(x[0].note)}</div>`:''}</div><button class="x" onclick="del('spells',${x[1]})">×</button></div></div>`).join('')+'</div>';
+    }
+    h+=`<div class="add"><input id="sn" placeholder="Numele vrăjii"><div class="g"><select id="sl">${[0,1,2,3,4,5,6,7,8,9].map(l=>`<option value="${l}">${l?'Nivel '+l:'Truc'}</option>`).join('')}</select><input id="so" placeholder="Notă (ex: 1d10 foc)"></div><button class="go" onclick="addSp()">Adaugă vrajă</button></div>`;
+  }
+
+  if(tab=='hb'){
+    const abO=sel=>AB.map((a,i)=>`<option value="${i}" ${i==sel?'selected':''}>${a}</option>`).join('');
+    h+=`<h3>Clasă homebrew</h3><div class="add"><input id="hcn" placeholder="Nume clasă">
+    <div class="g"><select id="hcd"><option value="6">d6</option><option value="8" selected>d8</option><option value="10">d10</option><option value="12">d12</option></select>
+    <select id="hcc"><option value="-1">Fără vrăji</option>${AB.map((a,i)=>`<option value="${i}">Vrăji: ${a}</option>`).join('')}</select></div>
+    <div class="g"><select id="hs1">${abO(0)}</select><select id="hs2">${abO(2)}</select></div>
+    <input id="hcs" placeholder="Subclase (separate prin virgulă)">
+    <button class="go" onclick="addHC()">Salvează clasa</button></div>`;
+    if(S.hb.cls.length)h+='<div class="list" style="margin-top:10px">'+S.hb.cls.map((c,i)=>`<div class="act"><div class="t"><div><b>${esc(c.n)}</b><div class="mute">d${c.die} · Salvări: ${c.sv.map(x=>AB[x]).join(', ')}${c.subs?' · '+esc(c.subs):''}</div></div><button class="x" onclick="delHB('cls',${i})">×</button></div></div>`).join('')+'</div>';
+    h+=`<h3>Subclasă homebrew</h3><div class="add"><select id="hsc">${opts(clsList(),'','Alege clasa')}</select><input id="hsn" placeholder="Nume subclasă"><button class="go" onclick="addHS()">Adaugă subclasa</button></div>`;
+    const sl=Object.keys(S.hb.subs).flatMap(c=>S.hb.subs[c].map((s,i)=>[c,s,i]));
+    if(sl.length)h+='<div class="list" style="margin-top:10px">'+sl.map(x=>`<div class="act"><div class="t"><span><b>${esc(x[1])}</b> <span class="mute">${esc(x[0])}</span></span><button class="x" onclick="delHS('${esc(x[0])}',${x[2]})">×</button></div></div>`).join('')+'</div>';
+    h+=`<h3>Rasă homebrew</h3><div class="add"><div class="g"><input id="hrn" placeholder="Nume rasă"><input id="hrs" type="number" placeholder="Viteză (30)"></div>
+    <div class="g3">${AB.map((a,i)=>`<input id="hb${i}" type="number" placeholder="${a}">`).join('')}</div>
+    <button class="go" onclick="addHR()">Salvează rasa</button></div>`;
+    if(S.hb.races.length)h+='<div class="list" style="margin-top:10px">'+S.hb.races.map((r,i)=>`<div class="act"><div class="t"><div><b>${esc(r.n)}</b><div class="mute">${r.spd} ft · ${r.b.map((x,j)=>x?AB[j]+sg(x):'').filter(Boolean).join(' ')||'fără bonusuri'}</div></div><button class="x" onclick="delHB('races',${i})">×</button></div></div>`).join('')+'</div>';
+    h+='<p class="mute">Dacă salvezi cu același nume, intrarea existentă se înlocuiește.</p>';
+  }
+
+  if(tab=='note')h+=`<textarea placeholder="Echipament, trăsături, poveste, notițe de sesiune..." onchange="set('notes',this.value)">${esc(S.notes)}</textarea>`;
+
+  $('app').innerHTML=h;
+}
+render();
+</script>
+</body>
+</html>
